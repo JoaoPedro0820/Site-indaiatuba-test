@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indaiatuba - Conheça a Cidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo a Indaiatuba</h1>
+        <nav>
+            <ul>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#turismo">Pontos Turísticos</a></li>
+                <li><a href="#cultura">Cultura</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="historia">
+        <h2>História de Indaiatuba</h2>
+        <p>Indaiatuba é uma cidade localizada no interior do estado de São Paulo, famosa por sua qualidade de vida e seu desenvolvimento rápido. A cidade tem uma rica história que começa no século XVIII...</p>
+    </section>
+
+    <section id="turismo">
+        <h2>Pontos Turísticos</h2>
+        <ul id="turismo-list">
+            <!-- Os pontos turísticos serão carregados via JavaScript -->
+        </ul>
+    </section>
+
+    <section id="cultura">
+        <h2>Cultura Local</h2>
+        <p>A cultura de Indaiatuba é marcada por festas tradicionais, como a Festa das Flores e dos Morangos, além de eventos voltados à música e ao teatro...</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Indaiatuba - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const pontosTuristicos = [
+        "Parque Ecológico de Indaiatuba",
+        "Museu Ferroviário",
+        "Praça Prudente de Moraes",
+        "Mosteiro de Itaici",
+        "Polo Shopping Indaiatuba"
+    ];
+
+    const turismoList = document.getElementById("turismo-list");
+
+    pontosTuristicos.forEach(function(ponto) {
+        const li = document.createElement("li");
+        li.textContent = ponto;
+        turismoList.appendChild(li);
+    });
+});
